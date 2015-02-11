@@ -1,0 +1,29 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'build:css' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose run-script [ 'prebuild:css', 'build:css', 'postbuild:css' ]
+5 info prebuild:css stylus-material-framework@1.0.0
+6 info build:css stylus-material-framework@1.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info stylus-material-framework@1.0.0 Failed to exec build:css script
+9 error stylus-material-framework@1.0.0 build:css: `stylus -u jeet -u nib app/styles/main.styl -o dist`
+9 error Exit status 8
+10 error Failed at the stylus-material-framework@1.0.0 build:css script.
+10 error This is most likely a problem with the stylus-material-framework package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     stylus -u jeet -u nib app/styles/main.styl -o dist
+10 error You can get their info via:
+10 error     npm owner ls stylus-material-framework
+10 error There is likely additional logging output above.
+11 error System Linux 3.14.13-c9
+12 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "run" "build:css"
+13 error cwd /home/ubuntu/workspace/stylus-material-framework-npm
+14 error node -v v0.10.35
+15 error npm -v 1.4.28
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]

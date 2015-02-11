@@ -1,0 +1,18 @@
+html
+  font-size: 100%
+
+p
+  color: $white
+  
+zebra(even-color = $grey-500, odd-color=$grey-600, child='&')
+  {child}:nth-child(odd)
+    background-color: odd-color
+  {child}:nth-child(even)
+    background-color: even-color
+    
+.zebra
+  zebra()
+  padding: 2rem
+  
+  p
+    margin: 0

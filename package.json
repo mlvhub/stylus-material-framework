@@ -1,0 +1,31 @@
+{
+  "name": "stylus-material-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "coffee-script": "^1.9.0",
+    "coffeeify": "^1.0.0",
+    "jade": "^1.9.2",
+    "live-reload": "^0.2.0",
+    "lodash": "^3.1.0",
+    "mithril": "^0.1.30",
+    "moment": "^2.9.0",
+    "parallelshell": "^1.0.4",
+    "stylus": "^0.50.0",
+    "watch": "^0.13.0"
+  },
+  "scripts": {
+    "build:js": "browserify -d -t coffeeify --extension='.coffee' app/scripts/main.coffee -o dist/main.js",
+    "watch:js": "watch 'npm run build:js' app/scripts/",
+    "build:css": "stylus -u jeet -u nib app/styles/main.styl -o dist",
+    "watch:css": "watch 'npm run build:css' app/styles/",
+    "build:html": "jade app/index.jade -o dist",
+    "watch:html": "watch 'npm run build:html' app",
+    "build": "npm run build:js && npm run build:css && npm run build:html",
+    "build:watch": "parallelshell 'npm run watch:js' 'npm run watch:css' 'npm run watch:html'"
+  }
+}

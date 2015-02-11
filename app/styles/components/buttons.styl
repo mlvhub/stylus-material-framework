@@ -1,0 +1,24 @@
+.button
+  display: inline-block
+  border: none
+  height: 2.5em
+  min-width: 6em
+  padding: 0.5em 1em
+  color: $button-font-color
+  background-color: $button-background-color
+  cursor: pointer
+  box-shadow: 0 0 0.3em 0 rgba(50, 50, 50, 0.75);
+
+  &.flat
+    background: none
+    box-shadow: none
+    color: $button-background-color
+  
+  &.raised
+    border-radius: 5%
+  
+  &.floating
+    border-radius: 50%
+    height: 2.7em
+    min-width: 2.7em
+    padding: 0
