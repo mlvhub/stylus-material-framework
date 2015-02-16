@@ -1,19 +1,7 @@
 m = require 'mithril'
 _ = require 'lodash'
-header = require './layout/header'
-footer = require './layout/footer'
+layout = require './layout'
 
-layout = (header, body, footer) ->
-  m "div.layout", [
-    m "header", header
-    m "main", body
-    m "footer", footer
-  ]
-  
-mixinLayout = (layout, header, body, footer) ->
-  ->
-    layout(header(), body(), footer())
-      
 body = ->
   _.times 6, () ->
     m "div.zebra", [
@@ -26,6 +14,6 @@ body = ->
 app =
   controller: ->
     console.log 'app controller'
-  view: mixinLayout(layout, header, body, footer)
+  view: layout.general(body)
 
 module.exports = app

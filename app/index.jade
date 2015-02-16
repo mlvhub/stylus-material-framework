@@ -4,6 +4,6 @@ html(lang='en')
     meta(charset='UTF-8')
     title Title
     link(href='vendor.css', rel='stylesheet')
-    link(href='main.css', rel='stylesheet')
+    link(rel="stylesheet",href="#{locals['dist/main.css'].substr(5)}")
   body
-    script(src='main.js')
+    script(src="#{locals['dist/main.js'].substr(5)}")
