@@ -4,11 +4,11 @@ layout = require './layout'
 
 body = ->
   _.times 6, () ->
-    m "div.zebra", [
-      m "p", "Invokes the iteratee function n times, returning an array of the results of each invocation."
-      m "button.button.flat", "Button"
-      m "button.button.raised", "Button"
-      m "button.button.floating", "+"
+    m 'div.zebra', [
+      m 'p', 'Invokes the iteratee function n times, returning an array of the results of each invocation.'
+      m 'button.button.flat', 'Button'
+      m 'button.button.raised', 'Button'
+      m 'button.button.floating', '+'
     ]
     
 app =
