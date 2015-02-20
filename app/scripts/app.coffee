@@ -1,9 +1,9 @@
 m = require 'mithril'
 _ = require 'lodash'
-layout = require './layout'
+layout = require './layout/general'
 
 body = ->
-  _.times 6, () ->
+  _.times 6, ->
     m 'div.zebra', [
       m 'p', 'Invokes the iteratee function n times, returning an array of the results of each invocation.'
       m 'button.button.flat', 'Button'
@@ -14,6 +14,6 @@ body = ->
 app =
   controller: ->
     console.log 'app controller'
-  view: layout.general(body)
+  view: layout body
 
 module.exports = app

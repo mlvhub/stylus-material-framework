@@ -1,19 +1,17 @@
-layout = require '../../scripts/layout'
+layout = require '../../scripts/layout/general'
 mq = require 'mithril-query'
 m = require 'mithril'
 
 describe 'layout module', ->
 
   beforeEach  ->
-    @general = layout.general
+    @general = general
     @generalBody = ->
       m '.layout', [
         'Some text'
       ]
 
   it 'should create the general layout correctly', ->
-    console.log 'LAYOUT', @layout
-    console.log 'BODY', @generalBody
     view = mq @general(@generalBody)
     expect(view.has('header')).toBe true
     expect(view.has('footer')).toBe true

@@ -28,21 +28,22 @@
     "nodemon": "^1.3.7",
     "parallelshell": "^1.0.4",
     "rimraf": "^2.2.8",
-    "stylus": "^0.50.0"
+    "stylus": "^0.50.0",
+    "velocity-animate": "^1.2.2"
   },
   "scripts": {
-    "clean": "rimraf dist/assets",
+    "clean": "echo 'CLEAN' && rimraf dist/assets dist/*.map dist/*.js dist/*.css && echo 'DONE CLEAN'",
     "prebuild": "npm run clean ",
     "build": "npm run build:scripts  && npm run build:styles  && npm run build:markup && npm run build:assets",
     "build:assets": "cp -R app/assets/ dist/assets/",
     "build:scripts": "browserify -d -t coffeeify --extension='.coffee' app/scripts/main.coffee -o dist/main.js && hashmark  -l 8 -m assets.json dist/main.js 'dist/{name}{hash}{ext}'",
     "build:styles": "stylus -u jeet -u nib app/styles/main.styl -m -o dist/ && hashmark  -l 8 -m assets.json dist/main.css 'dist/{name}{hash}{ext}'",
     "build:markup": "jade app/index.jade --obj assets.json -o dist",
-    "test": "karma start -singleRun",
+    "test": "karma start --singleRun",
     "watch": "parallelshell 'npm run watch:test ' 'npm run watch:build '",
-    "watch:test": "karma start",
+    "watch:test": "echo 'KARMA' && karma start",
     "watch:build": "nodemon -q -w app/ --ext '.' --exec 'npm run build'",
     "serve": "browser-sync start --config 'bs-config.js'",
-    "dev": "npm run serve && npm run watch"
+    "dev": "parallelshell 'npm run serve' 'npm run watch'"
   }
 }

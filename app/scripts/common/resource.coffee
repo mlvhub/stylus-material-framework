@@ -1,9 +1,11 @@
+m = require 'mithril'
+
 class Resource
   @constructor: (@resource) ->
     @baseUrl = "/#{@resource}"
 
   specificUrl: (id) ->
-    "#{@baseUrl}/{#{id}}"
+    "#{@baseUrl}/#{id}"
 
   request: (method, url,  data = {}) ->
     m.request method: method, urL: url, data: data
